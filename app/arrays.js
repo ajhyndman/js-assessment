@@ -2,19 +2,19 @@ exports = (typeof window === 'undefined') ? global : window;
 
 exports.arraysAnswers = {
 
-  indexOf : function(arr, item) {
+  indexOf : function (arr, item) {
     return arr.indexOf(item);
   },
 
-  sum : function(arr) {
+  sum : function (arr) {
     return arr.reduce(function (a, b) { return a + b; });
   },
 
-  remove : function(arr, item) {
+  remove : function (arr, item) {
     return arr.filter(function (a) { return a !== item; });
   },
 
-  removeWithoutCopy : function(arr, item) {
+  removeWithoutCopy : function (arr, item) {
     var index = arr.indexOf(item);
     while (index !== -1) {
       arr.splice(index, 1);
@@ -23,36 +23,36 @@ exports.arraysAnswers = {
     return arr;
   },
 
-  append : function(arr, item) {
+  append : function (arr, item) {
     arr.push(item);
     return arr;
   },
 
-  truncate : function(arr) {
+  truncate : function (arr) {
     arr.pop();
     return arr;
   },
 
-  prepend : function(arr, item) {
+  prepend : function (arr, item) {
     arr.unshift(item);
     return arr;
   },
 
-  curtail : function(arr) {
+  curtail : function (arr) {
     arr.shift();
     return arr;
   },
 
-  concat : function(arr1, arr2) {
+  concat : function (arr1, arr2) {
     return arr1.concat(arr2);
   },
 
-  insert : function(arr, item, index) {
+  insert : function (arr, item, index) {
     arr.splice(index, 0, item);
     return arr;
   },
 
-  count : function(arr, item) {
+  count : function (arr, item) {
     var count = 0;
     arr.forEach(function (curr) {
       if (curr === item) { count += 1; }
@@ -60,7 +60,7 @@ exports.arraysAnswers = {
     return count;
   },
 
-  duplicates : function(arr) {
+  duplicates : function (arr) {
     // array to store duplicates
     var duplicates = [], front, prev;
 
@@ -80,11 +80,11 @@ exports.arraysAnswers = {
     return duplicates;
   },
 
-  square : function(arr) {
+  square : function (arr) {
     return arr.map(function (x) { return Math.pow(x, 2); });
   },
 
-  findAllOccurrences : function(arr, target) {
+  findAllOccurrences : function (arr, target) {
     var indices = [];
 
     var index = arr.indexOf(target);
