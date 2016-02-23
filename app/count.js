@@ -18,7 +18,24 @@
 
   return {
     count : function (start, end) {
-      return start + end;
+      var go, i, timer;
+      i = start;
+
+      go = function () {
+        if (i <= end) {
+          console.log(i);
+          i += 1;
+          timer = setTimeout(go, 100);
+        }
+      };
+
+      go(start);
+
+      return {
+        cancel: function () {
+          clearTimeout(timer);
+        }
+      };
     }
   };
 }));
