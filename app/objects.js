@@ -22,7 +22,7 @@
     },
 
     alterObjects : function (constructor, greeting) {
-      return constructor.bind(null, greeting);
+      constructor.prototype.greeting = greeting;
     },
 
     iterate : function (obj) {
