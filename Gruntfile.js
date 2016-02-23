@@ -1,4 +1,6 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
+  'use strict';
+
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
@@ -14,10 +16,27 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc'
       }
     },
+    jslint: {
+      all: {
+        src: [
+          'app/**/*.js',
+          // 'tests/app/**/*.js',
+          // 'tests/runner.js',
+          '!app/bestPractices.js'
+        ],
+        directives: {
+          browser: true,
+          devel: true,
+          node: true,
+          white: true,
+          predef: ['define']
+        }
+      }
+    },
     watch: {
       scripts: {
         files: ['app/**/*.js', 'tests/app/**/*.js'],
-        tasks: ['jshint'],
+        tasks: ['jshint', 'jslint'],
         options: {
           livereload: true
         }

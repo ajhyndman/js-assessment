@@ -25,6 +25,7 @@
 
   "predef": [
     "describe",
+    "define",
     "beforeEach",
     "afterEach",
     "it",
